@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 function wildcardRoute(req, res, next) {
   const text = `url: ${req.url}, originalUrl: ${req.originalUrl}, host: ${req.host}, headersHost ${req.headers.host}, localPort: ${req.socket.localPort}, remotePort: ${req.socket.remotePort}`;
